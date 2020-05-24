@@ -1,4 +1,5 @@
 # dockerproj
+[![CircleCI](https://circleci.com/gh/gyhou/dockerproj.svg?style=svg)](https://app.circleci.com/pipelines/github/gyhou/dockerproj)
 This is for a docker workflow
 
 ## AWS Cloud9

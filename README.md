@@ -12,7 +12,7 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
 
 ## dockerproj
 1. `cd dockerproj` get into directory
-1. `touch Makefile`
+1. `touch Makefile` - A file that contains a set of directives used to build software. Most Unix and Linux operating systems have built-in support for this file format.
 1. `touch requirements.txt`
 1. `touch Dockerfile`
 1. `touch app.py`
@@ -43,6 +43,7 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
     - `python app.py` will run the app inside the container
     
 ## CircleCI config
+- A popular SaaS (Software as a Service) build systems used in DevOps workflows
 1. `mkdir .circleci`
 1. `touch .circleci/config.yml`
 1. write code into config.yml
@@ -70,3 +71,14 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
 - set up project
 - start building
 - manual build - config.yml already created
+
+## Deploy to AWS ECR (Elastic Container Registries)
+- create repo, push container to ECR repo
+- view push commands - follow all 4 steps
+- allow others to use the container
+
+### Container
+A container is a set of processes that are isolated from the rest of the operating system. They are often megabytes in size.
+
+### Virtual Machine
+A virtual machine is the emulation of a physical operating system. They can be Gigabytes in size.

@@ -69,3 +69,4 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
 - https://app.circleci.com/projects/project-dashboard/github/gyhou
 - set up project
 - start building
+- manual build - config.yml already created

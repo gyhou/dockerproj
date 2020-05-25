@@ -10,46 +10,48 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
 1. Creates public SSH key `cat /home/ec2-xxx/.xxx/xxx.pub` copy and paste
 1. Copy the key to github account - settings - SSH and GPG keys - New SSH key - "title" dockerproj, "key" secret key
 1. clone with SSH on github repo
-1. git clone into cloud9 terminal `git clone git@github.com:gyhou/dockerproj.git` - continue connect "yes"
+1. git clone into cloud9 terminal `git clone git@github.com:xxx/xxx.git` - continue connect "yes"
 
-## dockerproj
-1. `cd dockerproj` get into directory
+## Github Repo name
+1. `cd xxx` get into directory
 1. `touch Makefile` - A file that contains a set of directives used to build software. Most Unix and Linux operating systems have built-in support for this file format.
 1. `touch requirements.txt`
 1. `touch Dockerfile`
-1. `touch app.py`
+1. `touch app.py` - the name of the app you are creating
 
 ## Set up 
 1. Write code into Dockerfile, app.py
-1. `chmod +x app.py` - change access permission
+1. `chmod +x app.py` - change access permission so you have access
 1. test app `python app.py`
-1. `python app.py --help`
-1. write code in Makefile - hadolint Dockerfile
+1. `python app.py --help` - see if you set up --help function in your app
+1. write code in Makefile - hadolint Dockerfile, linting for Docker file
 1. download hadolint `sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v1.17.6/hadolint-Linux-x86_64 &&\ chmod +x /bin/hadolint`
     - Shouldn't need to use this since `sudo` added
       - `sudo !!` - use higher permission to run code
     - `sudo chmod +x /bin/hadolint`
     - `make lint`
-1. add click, pylint in requirment.txt
+1. add click, pylint in requirements.txt (or any dependencies needed for your app)
 
 ## Virutal Environment
+Set up virutal environment to install dependencies
 1. `python3 -m venv ~/.dockerproj`
 1. `source ~/.dockerproj/bin/activate`
-1. `make install`
+1. `make install` - install all the dependencies listed in the requirements.txt
 
 ## Docker
-1. Pull down base container to allow changes `docker build --tag=app .`
+1. Pull down base container to allow changes `docker build --tag=app .` (in this example `app` is the name of the app)
 1. `docker image ls` display images, including the app created
 1. shell into the container created `docker run -it app bash`
     - `ls` will show files inside the container
     - `python app.py` will run the app inside the container
     
 ## CircleCI config
-- A popular SaaS (Software as a Service) build systems used in DevOps workflows
+- A popular SaaS (Software as a Service) build systems used in DevOps workflows to automate CI/CD
 1. `mkdir .circleci`
 1. `touch .circleci/config.yml`
 1. write code into config.yml
 1. set up in local manual download `cd /tmp`
+    - https://github.com/CircleCI-Public/circleci-cli/releases
     - `wget https://github.com/CircleCI-Public/circleci-cli/releases/download/v0.1.7868/circleci-cli_0.1.7868_linux_amd64.tar.gz`
     - `tar zxvf circleci-cli_0.1.7868_linux_amd64.tar.gz` unpack
     - `cd circleci-cli_0.1.7868_linux_amd64`
@@ -61,6 +63,7 @@ Your public key has been saved in `/home/ec2-xxx/.xxx/xxx.pub`
     - `./circleci local execute`
     
 ## Git push
+Make sure to save progress into github
 - `mv circleci /tmp`
 - `git status`
 - `git add .circleci/`
